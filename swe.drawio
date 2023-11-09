@@ -1,0 +1,63 @@
+<mxfile host="65bd71144e">
+    <diagram id="i9Y0O08ahRR-UrPIu7zM" name="Page-1">
+        <mxGraphModel dx="992" dy="612" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="InstaPay account" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="30" width="130" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Bank &lt;br&gt;account" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="220" y="30" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="mobile wallet" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="365" y="30" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="bills" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="30" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="sign up using bank phone number" style="whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="10" y="280" width="160" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="sign up using wallet mobile number" style="whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="280" width="130" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="after enter mobile number verify using OTP" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="365" y="280" width="160" height="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="User enter unique username and ccomplex password" style="whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="275" width="120" height="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;" edge="1" parent="1" source="11">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="90" y="540" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="after sign up login using username and paassword" style="whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="10" y="450" width="210" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Type of the account ==&amp;gt; wallet or bank&amp;nbsp;" style="whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="450" width="190" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Transfer&lt;br&gt;1. instapay account to instapay account&lt;br&gt;2. instapay account to a wallet number&lt;br&gt;3.instpay account (bank account)&amp;nbsp; to bank account&lt;/font&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="650" width="367.5" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="870" width="155" height="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Water" style="whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="72.5" y="1170" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Gas" style="whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="72.5" y="1000" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Electricity" style="whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="72.5" y="1090" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="bill payment" style="whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="72.5" y="900" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
