@@ -30,16 +30,5 @@ public class BillPayment implements Recipient {
         }
         else return false;
     }
-    public void setBill(String billtype) {
-        if(billtype.equals("Gasbill")){
-            this.bill =new GasBill();
-        }
-        else if(billtype.equals("WaterBill")){
-            this.bill =new WaterBill();
-        }
-        else if(billtype.equals("ElectricityBill")){
-            this.bill =new ElectricityBill();
-        }
-
-    }
+   
 }
