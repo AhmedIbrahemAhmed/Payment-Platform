@@ -2,7 +2,7 @@ package Provider;
 
 import java.io.*;
 
-public class Bank implements Provider{
+public class Bank implements  Provider,bank{
 
     @Override
     public boolean verify(String phoneNumber) {
