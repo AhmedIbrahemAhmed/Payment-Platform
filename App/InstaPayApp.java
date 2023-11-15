@@ -3,11 +3,13 @@ package App;
 import Account.InstaPayAccount;
 import TransactionProcessing.Transfer;
 import Provider.*;
+import Registration.Login;
+import Registration.Signup;
 import java.util.Scanner;
 
-public class InstapayApp {
+public class InstaPayApp {
     private final Scanner scan = new Scanner(System.in);
-
+    
     public void run(){
     boolean loop = true;
         while (loop) {
@@ -45,14 +47,20 @@ public class InstapayApp {
                 System.out.println("2.Online Wallet");
                 System.out.println("-->");
                 int accountType = Integer.parseInt(scan.nextLine());
-
+            
                 Signup signup = new Signup();
+                int otp = signup.otp(phoneNum);
+                System.out.print("your otp: ");
+                System.out.println(otp);
+                System.out.println("confirm otp: ");
+                int userOtp = scan.nextInt();
+
                 switch (accountType) {
                     case 1:
-                        registered = signup.register(username, password, fullName, "Bank", phoneNum);
+                        registered = signup.register(username, password, fullName, "Bank", phoneNum, otp, userOtp);
                         break;
                     case 2:
-                         registered = signup.register(username, password, fullName, "Wallet", phoneNum);
+                         registered = signup.register(username, password, fullName, "Wallet", phoneNum, otp, userOtp);
                         break;
                     default:
                         System.out.println("Invalid choice!");
