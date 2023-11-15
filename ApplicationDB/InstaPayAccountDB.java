@@ -1,5 +1,7 @@
-package AccountDB;
+package ApplicationDB;
 import java.sql.*;
+
+import Account.InstaPayAccount;
 public class InstaPayAccountDB {
   private static final String URL = "jdbc:postgres://instapay_j6jt_user:ZWdgT2UzAESbdOz7CO4F1YPr9srQXDKX@dpg-cl94dpdo7jlc739ob66g-a.oregon-postgres.render.com/instapay_j6jt";
   private static final String USER = "instapay_j6jt_user";
@@ -83,10 +85,10 @@ public class InstaPayAccountDB {
           "(username, password, full-name, phone-number)" +
           "VALUES(?, ?, ?, ?)";
       try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-        preparedStatement.setString(1, user.username);
-        preparedStatement.setString(2, user.password);
-        preparedStatement.setString(3, user.fullName);
-        preparedStatement.setString(4, user.phoneNumber);
+        preparedStatement.setString(1, user.getUserName());
+        preparedStatement.setString(2, user.getPassword());
+        preparedStatement.setString(3, user.getFullName());
+        preparedStatement.setString(4, user.getPhoneNumber());
 
         int rowsAffected = preparedStatement.executeUpdate();
         return rowsAffected > 0;
@@ -112,7 +114,7 @@ public class InstaPayAccountDB {
           if (resultSet.next()) {
             String fullName = resultSet.getString("full-name");
             String phoneNumber =  resultSet.getString("phone-number");
-            instaPayAccount = new InstaPayAccount(username, password, fullName, phoneNumber);
+            instaPayAccount = new InstaPayAccount(username, password, fullName, phoneNumber, phoneNumber);
           }
         }
       }
