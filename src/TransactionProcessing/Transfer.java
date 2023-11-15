@@ -51,8 +51,8 @@ public class Transfer {
                 
                 this.distination=new InstapayAccountPayment();
                 if(distination.check(ID)){
-                    provider.deduceBalance(balance, source.getPhoneNumber());
                     distination.pay(balance, ID);
+                    provider.deduceBalance(balance, source.getPhoneNumber());
                 }else{
                     System.out.println("there is no such Bank Account.");
                     
