@@ -1,6 +1,7 @@
 package Registration;
 
 import java.security.SecureRandom;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import Account.InstaPayAccount;
@@ -26,7 +27,7 @@ public class Signup {
   }
   private boolean verify(String phoneNumber, String type){
     Provider provider;
-      if(type=="Bank"){
+      if(Objects.equals(type, "Bank")){
          provider = new Bank();
       }
       else{
