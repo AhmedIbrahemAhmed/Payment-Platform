@@ -4,9 +4,11 @@ public class InstaPayAccountDB {
   private static final String URL = "jdbc:postgres://instapay_j6jt_user:ZWdgT2UzAESbdOz7CO4F1YPr9srQXDKX@dpg-cl94dpdo7jlc739ob66g-a.oregon-postgres.render.com/instapay_j6jt";
   private static final String USER = "instapay_j6jt_user";
   private static final String PASSWORD = "";
+
   private static Connection getConnection() throws SQLException {
     return DriverManager.getConnection(URL, USER, PASSWORD);
   }
+
   private void closeConnection(Connection connection) {
     if (connection != null) {
       try {
@@ -16,6 +18,7 @@ public class InstaPayAccountDB {
       }
     }
   }
+
   public void establishSchema() {
     try (Connection connection = getConnection();
          Statement statement = connection.createStatement()) {
@@ -24,12 +27,14 @@ public class InstaPayAccountDB {
           + "username VARCHAR(255) NOT NULL,"
           + "password VARCHAR(20) NOT NULL,"
           + "full-name DECIMAL(10, 2) NOT NULL,"
-          + "phone-number  VARCHAR(30) NOT NULL);";
+          + "phone-number  VARCHAR(30) NOT NULL"
+          + "type);";
       statement.executeUpdate(createTableSQL);
     } catch (SQLException e) {
       System.out.println("Schema creation failed: " + e.getMessage());
     }
   }
+
   public boolean checkUsernameExist(String username) {
     boolean exists = false;
     try (Connection connection = getConnection()) {
@@ -50,6 +55,7 @@ public class InstaPayAccountDB {
     }
     return exists;
   }
+
   public boolean checkPhoneNumberExist(String phoneNumber) {
     boolean exists = false;
     try (Connection connection = getConnection()) {
@@ -70,6 +76,7 @@ public class InstaPayAccountDB {
     }
     return exists;
   }
+
   public boolean saveInstaPayAccount(InstaPayAccount user) {
     try (Connection connection = getConnection()) {
       String query = "INSERT INTO InstaPayAccount" +
@@ -89,9 +96,9 @@ public class InstaPayAccountDB {
     }
     return false;
   }
+
   public InstaPayAccount loadInstaPayAccount(String username, String password) {
     InstaPayAccount instaPayAccount = null;
-
     try (Connection connection = getConnection()) {
       String query = "SELECT full-name, phone-number" +
           " FROM InstaPayAccount " +
@@ -113,5 +120,28 @@ public class InstaPayAccountDB {
       e.printStackTrace();
     }
     return instaPayAccount;
+  }
+
+  public String getAccountType(String username) {
+    String type = "";
+    try (Connection connection = getConnection()) {
+      String query = "SELECT type" +
+          " FROM InstaPayAccount " +
+          "WHERE username = ?";
+
+      try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+        preparedStatement.setString(1, username);
+
+        try (ResultSet resultSet = preparedStatement.executeQuery()) {
+          if (resultSet.next()) {
+            type = resultSet.getString("type");
+            return type;
+          }
+        }
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return type;
   }
 }
