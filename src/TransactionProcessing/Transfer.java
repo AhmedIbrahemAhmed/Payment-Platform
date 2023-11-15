@@ -142,6 +142,7 @@ public class Transfer {
                     String ID=scanner.nextLine();
                     System.out.print("please enter amount of money you wanna pay: ");
                     double amount=scanner.nextDouble();
+                    scanner.nextLine();
                     provider.deduceBalance(amount, source.getPhoneNumber());
                     distination.pay(amount, ID);
                 }
