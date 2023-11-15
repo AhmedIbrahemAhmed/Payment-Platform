@@ -144,4 +144,27 @@ public class InstaPayAccountDB {
     }
     return type;
   }
+
+  public String getPhoneNumber(String username) {
+    String phoneNumber = "";
+    try (Connection connection = getConnection()) {
+      String query = "SELECT phone-number" +
+          " FROM InstaPayAccount " +
+          "WHERE username = ?";
+
+      try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+        preparedStatement.setString(1, username);
+
+        try (ResultSet resultSet = preparedStatement.executeQuery()) {
+          if (resultSet.next()) {
+            phoneNumber = resultSet.getString("phone-number");
+            return phoneNumber;
+          }
+        }
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return phoneNumber;
+  }
 }
