@@ -91,6 +91,10 @@ public class Bank implements  Provider,BankMarker{
             writer.close();
             reader.close();
 
+            if (!inputFile.delete()) {
+                System.out.println("Error updating balance. Could not delete the original file.");
+                return;
+            }
             // Rename the temporary file to the original file
             if (!tempFile.renameTo(inputFile)) {
                 System.out.println("Error updating balance. Please check file permissions.");
@@ -134,6 +138,10 @@ public class Bank implements  Provider,BankMarker{
             writer.close();
             reader.close();
 
+            if (!inputFile.delete()) {
+                System.out.println("Error updating balance. Could not delete the original file.");
+                return;
+            }
             // Rename the temporary file to the original file
             if (!tempFile.renameTo(inputFile)) {
                 System.out.println("Error updating balance. Please check file permissions.");
@@ -176,7 +184,10 @@ public class Bank implements  Provider,BankMarker{
 
             writer.close();
             reader.close();
-
+            if (!inputFile.delete()) {
+                System.out.println("Error updating balance. Could not delete the original file.");
+                return;
+            }
             // Rename the temporary file to the original file
             if (!tempFile.renameTo(inputFile)) {
                 System.out.println("Error updating balance. Please check file permissions.");

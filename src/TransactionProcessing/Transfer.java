@@ -65,9 +65,9 @@ public class Transfer {
         }
         else  if(choice.equals("2")){
            if(provider instanceof BankMarker){
-            System.out.print("PLease enter the Phone number of the Bank Account you want to transfer to : ");
+            System.out.print("PLease enter the Phone number of the Bank Account you want to transfer to: ");
             String ID=scanner.nextLine();
-            System.out.print("PLease enter the amount you want to transfer : ");
+            System.out.print("PLease enter the amount you want to transfer: ");
             double balance=scanner.nextDouble();
             scanner.nextLine();
             
@@ -91,9 +91,9 @@ public class Transfer {
            }
         } 
         else  if(choice.equals("3")){
-            System.out.print("PLease enter the Phone number of the Bank Account you want to transfer to : ");
+            System.out.print("PLease enter the Phone number of the Online Wallet you want to transfer to: ");
             String ID=scanner.nextLine();
-            System.out.print("PLease enter the amount you want to transfer : ");
+            System.out.print("PLease enter the amount you want to transfer: ");
             double balance=scanner.nextDouble();
             scanner.nextLine();
             
@@ -114,7 +114,7 @@ public class Transfer {
         }
         else  if(choice.equals("4")){
              while(true){
-                System.out.print("1-Gas.\n2-Water.\n3-Electricity.\n4-Quit.\nplease enter your choice : ");
+                System.out.print("1-Gas.\n2-Water.\n3-Electricity.\n4-Quit.\nplease enter your choice: ");
                 String c=scanner.nextLine();
                 distination=new BillPayment();
                 String temp;
