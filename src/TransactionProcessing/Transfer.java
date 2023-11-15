@@ -155,7 +155,7 @@ public class Transfer {
             break ;
         }
     }
-    scanner.close();
+//    scanner.close();
     // } catch ( ReflectiveOperationException e) {
     //     e.printStackTrace();
     // }
