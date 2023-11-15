@@ -64,7 +64,7 @@ public class Transfer {
             
         }
         else  if(choice.equals("2")){
-           if(provider instanceof bank){
+           if(provider instanceof BankMarker){
             System.out.print("PLease enter the Phone number of the Bank Account you want to transfer to : ");
             String ID=scanner.nextLine();
             System.out.print("PLease enter the amount you want to transfer : ");
