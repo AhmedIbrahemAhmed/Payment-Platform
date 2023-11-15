@@ -36,7 +36,7 @@ public class InstaPayApp {
             try {
                 System.out.print("Enter username (has to be unique): ");
                 String username = scan.nextLine();
-                System.out.print("Enter password: ");
+                System.out.print("Enter password (minimum 9 characters a small letter a capital letter and a symbol(@#$%^&+=!): ");
                 String password = scan.nextLine();
                 System.out.print("Enter your display name: ");
                 String fullName = scan.nextLine();
