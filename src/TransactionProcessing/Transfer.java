@@ -91,7 +91,7 @@ public class Transfer {
            }
         } 
         else  if(choice.equals("3")){
-            System.out.print("PLease enter the Phone number of the Online Wallet you want to transfer to: ");
+            System.out.print("PLease enter the Phone number of the online wallet you want to transfer to: ");
             String ID=scanner.nextLine();
             System.out.print("PLease enter the amount you want to transfer: ");
             double balance=scanner.nextDouble();
