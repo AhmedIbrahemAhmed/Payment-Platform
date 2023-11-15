@@ -41,7 +41,26 @@ public class Transfer {
         String choice = scanner.nextLine();
         
         if(choice.equals("1")){
-            //unfinsihed business
+            System.out.print("PLease enter the user name of the instapay Account you want to transfer to : ");
+            String ID=scanner.nextLine();
+            System.out.print("PLease enter the amount you want to transfer : ");
+            double balance=scanner.nextDouble();
+            scanner.nextLine();
+            
+            if(provider.getBalance(source.getPhoneNumber())>=balance){
+                
+                this.distination=new InstapayAccountPayment();
+                if(distination.check(ID)){
+                    provider.deduceBalance(balance, source.getPhoneNumber());
+                    distination.pay(balance, ID);
+                }else{
+                    System.out.println("there is no such Bank Account.");
+                    
+                }
+            }else {
+                System.out.println("not enouph balance");
+            }
+
             
         }
         else  if(choice.equals("2")){
