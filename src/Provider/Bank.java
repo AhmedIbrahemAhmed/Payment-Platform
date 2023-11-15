@@ -145,8 +145,6 @@ public class Bank implements  Provider,BankMarker{
             // Rename the temporary file to the original file
             if (!tempFile.renameTo(inputFile)) {
                 System.out.println("Error updating balance. Please check file permissions.");
-            } else {
-                System.out.println("Balance updated successfully.");
             }
         } catch (IOException e) {
             e.printStackTrace();
