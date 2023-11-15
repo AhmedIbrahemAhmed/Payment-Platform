@@ -1,5 +1,5 @@
+package AccountDB;
 import java.sql.*;
-
 public class InstaPayAccountDB {
   private static final String URL = "jdbc:postgres://instapay_j6jt_user:ZWdgT2UzAESbdOz7CO4F1YPr9srQXDKX@dpg-cl94dpdo7jlc739ob66g-a.oregon-postgres.render.com/instapay_j6jt";
   private static final String USER = "instapay_j6jt_user";
@@ -167,5 +167,4 @@ public class InstaPayAccountDB {
     }
     return phoneNumber;
   }
-
 }
