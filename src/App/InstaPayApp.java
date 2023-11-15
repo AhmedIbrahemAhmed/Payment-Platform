@@ -45,26 +45,22 @@ public class InstaPayApp {
                 System.out.println("Your phone number is registered with:");
                 System.out.println("1.Bank");
                 System.out.println("2.Online Wallet");
-                System.out.println("-->");
+                System.out.print("-->");
                 int accountType = Integer.parseInt(scan.nextLine());
             
                 Signup signup = new Signup();
                 int otp = signup.otp(phoneNum);
                 System.out.print("your otp: ");
                 System.out.println(otp);
-                System.out.println("confirm otp: ");
-                int userOtp = scan.nextInt();
+                System.out.print("confirm otp: ");
+                int userOtp = Integer.parseInt(scan.nextLine());
 
                 switch (accountType) {
-                    case 1:
-                        registered = signup.register(username, password, fullName, "Bank", phoneNum, otp, userOtp);
-                        break;
-                    case 2:
-                         registered = signup.register(username, password, fullName, "Wallet", phoneNum, otp, userOtp);
-                        break;
-                    default:
-                        System.out.println("Invalid choice!");
-                        break;
+                    case 1 ->
+                            registered = signup.register(username, password, fullName, "Bank", phoneNum, otp, userOtp);
+                    case 2 ->
+                            registered = signup.register(username, password, fullName, "Wallet", phoneNum, otp, userOtp);
+                    default -> System.out.println("Invalid choice!");
                 }
             } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
