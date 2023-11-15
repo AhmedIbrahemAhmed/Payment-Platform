@@ -107,7 +107,7 @@ public class InstaPayAccountDB {
   public InstaPayAccount loadInstaPayAccount(String username, String password) {
     InstaPayAccount instaPayAccount = null;
     try (Connection connection = getConnection()) {
-      String query = "SELECT fullname, phonenumber " +
+      String query = "SELECT fullname, phonenumber, type" +
           " FROM InstaPayAccount " +
           "WHERE username = ? and password = ?";
 
@@ -119,7 +119,8 @@ public class InstaPayAccountDB {
           if (resultSet.next()) {
             String fullName = resultSet.getString("fullname");
             String phoneNumber =  resultSet.getString("phonenumber");
-            instaPayAccount = new InstaPayAccount(username, password, fullName, phoneNumber, phoneNumber);
+            String type =  resultSet.getString("type");
+            instaPayAccount = new InstaPayAccount(username, password, fullName, type, phoneNumber);
           }
         }
       }

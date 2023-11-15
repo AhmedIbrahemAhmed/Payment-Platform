@@ -117,6 +117,7 @@ public class InstaPayApp {
                 case 3:
                     System.out.println("Logged out successfully. Goodbye!");
                     loop = false;
+                    break;
                 default:
                     System.out.println("Invalid choice!");
                     break;

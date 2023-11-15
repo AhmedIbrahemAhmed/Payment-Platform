@@ -14,13 +14,13 @@ public class Transfer {
        
         String className = source.getAccountType();
         Provider provider;
-        if(className.equals("Bank")){
+        if(className.equalsIgnoreCase("Bank")){
             provider= new Bank();
-        }else if(className.equals("Wallet")){
+        }else if(className.equalsIgnoreCase("Wallet")){
             provider= new Wallet();
         }
         else{
-            System.out.println("Worng Provider");
+            System.out.println("Wrong Provider");
             return;
         }
        
@@ -36,14 +36,14 @@ public class Transfer {
         
         Scanner scanner = new Scanner(System.in);
         while(true){
-        System.out.print("1-Transfer to InstapayUser.\n2-Transfer to BankAccount.\n3-Transfer to Wallet.\n4-Pay pills.\n5-Quit.\nPlease enter your choice : ");
+        System.out.print("1-Transfer to InstapayUser.\n2-Transfer to BankAccount.\n3-Transfer to Wallet.\n4-Pay pills.\n5-Quit.\nPlease enter your choice: ");
       
         String choice = scanner.nextLine();
         
         if(choice.equals("1")){
-            System.out.print("PLease enter the user name of the instapay Account you want to transfer to : ");
+            System.out.print("PLease enter the user name of the instapay Account you want to transfer to: ");
             String ID=scanner.nextLine();
-            System.out.print("PLease enter the amount you want to transfer : ");
+            System.out.print("PLease enter the amount you want to transfer: ");
             double balance=scanner.nextDouble();
             scanner.nextLine();
             
@@ -58,7 +58,7 @@ public class Transfer {
                     
                 }
             }else {
-                System.out.println("not enouph balance");
+                System.out.println("not enough balance");
             }
 
             
@@ -82,7 +82,7 @@ public class Transfer {
                     
                 }
             }else {
-                System.out.println("not enouph balance");
+                System.out.println("not enough balance");
             }
 
            }
@@ -114,7 +114,7 @@ public class Transfer {
         }
         else  if(choice.equals("4")){
              while(true){
-                System.out.print("1-Gas.\n2-Water.\n3-Electricity.\n4-Quit.\npleace enter your choice : ");
+                System.out.print("1-Gas.\n2-Water.\n3-Electricity.\n4-Quit.\nplease enter your choice : ");
                 String c=scanner.nextLine();
                 distination=new BillPayment();
                 String temp;
@@ -134,7 +134,7 @@ public class Transfer {
                     break;
                 }
                 else {
-                    System.out.println("worng choice.");
+                    System.out.println("wording choice.");
                     break;
                 }
                 if(distination.check(temp)){
