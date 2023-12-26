@@ -1,0 +1,73 @@
+System
+    1. Orders
+    2. notification management
+
+1. Orders Module
+    1. A list of all the products currently available for purchase should be displayed.
+
+    2. Product ==> ( serial number, name, vendor, category, price)
+        1. track the stock ???
+
+        Customer:
+            1. Customer could create account ( sign in , sign up) using (email and password)
+
+            2. Customer ==> (name, password, id, balance, email, address)
+
+            3. Customer Place orders
+                1. simple order ==> order for your self
+
+                2. compound order ==> contains multiple orders for you and your friend
+
+                3. the balance of each order is deducted from its corresponding customer
+
+                4. Shipping
+                    1. In simple orders the shipping fees deducted from your balance
+                    2. In compound order the shipping fees will split on him ???
+
+   3. Cancellation:
+       1. customer can cancel the order
+
+
+2. Notification Module:
+    1. create different templates for massages (!! at least two massages templates)
+
+    2. each template could be sent in different language
+
+    3. massage could be sent to (email, sms ???)
+
+    4. create a notification queue
+        1. insert notification that will be sent
+        2. list all notifications in this queue
+
+    5. remove massages from notification queue after configured time
+
+    6. the system should provide some live statistics to the overall
+       software. The target of these statistics is to provide a vision about the notifications that are sent
+       successfully:
+           • The most notified email-address/phone-number.
+           • The most sent notification template.
+
+Entities:
+Orders:
+    1. Customer ==> (name, password, id, balance, email, address)
+    2. Product  ==> (serial number, name, vendor, category, price)
+    3. Cart     ==> (Products, ID)
+    4. Order    ==> (ID, products-price, shipment-fees, cart, shipment-address, customerID)
+    5. Login    ==> (sign-in(), sign-up())
+
+    DB
+    Stock  ==> (Product, available-items) ==> map<name, List<Products>>
+    customers ==> (list<Customer>)
+
+Notifications:
+    1. Message (content, massage, sendSMS(), sendEmail())
+
+    2. MessageHandle (notificationQueue, insert(), list(), remove())
+
+    3. NotificationStat(calcMostNotifiedEmail(), calcMostNotifiedPhoneNumber(), calcMostSentNotificationTemplate())
+
+    DB:
+     MessageHistory(List<message>messages)
+
+Remaining: 
+  SMS and Email Notifications
