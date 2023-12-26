@@ -2,7 +2,7 @@ package Provider;
 
 import java.io.*;
 
-public class Bank implements Provider{
+public class Bank implements  Provider,BankMarker{
 
     @Override
     public boolean verify(String phoneNumber) {
@@ -91,6 +91,10 @@ public class Bank implements Provider{
             writer.close();
             reader.close();
 
+            if (!inputFile.delete()) {
+                System.out.println("Error updating balance. Could not delete the original file.");
+                return;
+            }
             // Rename the temporary file to the original file
             if (!tempFile.renameTo(inputFile)) {
                 System.out.println("Error updating balance. Please check file permissions.");
@@ -134,11 +138,13 @@ public class Bank implements Provider{
             writer.close();
             reader.close();
 
+            if (!inputFile.delete()) {
+                System.out.println("Error updating balance. Could not delete the original file.");
+                return;
+            }
             // Rename the temporary file to the original file
             if (!tempFile.renameTo(inputFile)) {
                 System.out.println("Error updating balance. Please check file permissions.");
-            } else {
-                System.out.println("Balance updated successfully.");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -176,7 +182,10 @@ public class Bank implements Provider{
 
             writer.close();
             reader.close();
-
+            if (!inputFile.delete()) {
+                System.out.println("Error updating balance. Could not delete the original file.");
+                return;
+            }
             // Rename the temporary file to the original file
             if (!tempFile.renameTo(inputFile)) {
                 System.out.println("Error updating balance. Please check file permissions.");

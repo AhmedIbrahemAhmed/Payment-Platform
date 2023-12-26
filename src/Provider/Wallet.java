@@ -91,6 +91,10 @@ public class Wallet implements Provider{
             writer.close();
             reader.close();
 
+            if (!inputFile.delete()) {
+                System.out.println("Error updating balance. Could not delete the original file.");
+                return;
+            }
             // Rename the temporary file to the original file
             if (!tempFile.renameTo(inputFile)) {
                 System.out.println("Error updating balance. Please check file permissions.");
@@ -135,11 +139,13 @@ public class Wallet implements Provider{
             writer.close();
             reader.close();
 
+            if (!inputFile.delete()) {
+                System.out.println("Error updating balance. Could not delete the original file.");
+                return;
+            }
             // Rename the temporary file to the original file
             if (!tempFile.renameTo(inputFile)) {
                 System.out.println("Error updating balance. Please check file permissions.");
-            } else {
-                System.out.println("Balance updated successfully.");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -178,6 +184,10 @@ public class Wallet implements Provider{
             writer.close();
             reader.close();
 
+            if (!inputFile.delete()) {
+                System.out.println("Error updating balance. Could not delete the original file.");
+                return;
+            }
             // Rename the temporary file to the original file
             if (!tempFile.renameTo(inputFile)) {
                 System.out.println("Error updating balance. Please check file permissions.");

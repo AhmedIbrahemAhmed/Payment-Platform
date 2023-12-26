@@ -11,7 +11,7 @@ public class BillPayment implements Recipient {
         bill.pay(amount, ID);
         
         }
-        else System.out.println("worng Bill ID");
+        else System.out.println("wrong Bill ID");
     }
     public boolean check(String ID){
         String []parts=ID.split(" ");

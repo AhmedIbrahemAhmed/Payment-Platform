@@ -9,7 +9,6 @@ public class Login {
     InstaPayAccount account = null;
     try {
       account =  accountDB.loadInstaPayAccount(username, password);
-      System.out.println(account);
     } catch (Exception e) {
      throw new Exception(e.getMessage());
     }

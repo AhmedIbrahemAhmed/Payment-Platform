@@ -16,10 +16,10 @@ public class InstapayAccountPayment implements Recipient{
          String type=Db.getAccountType(ID);
          String phoneNumber=Db.getPhoneNumber(ID);
          Provider pro;
-         if(type=="Bank"){
+         if(type.equalsIgnoreCase("Bank")){
             pro= new Bank();
          }
-         else if (type=="Wallet"){
+         else if (type.equalsIgnoreCase("Wallet")){
             pro =new Wallet();
          }
          else {

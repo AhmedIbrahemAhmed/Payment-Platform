@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class ElectricityBill extends Bill {
     private String companyName;
-    private String consumption;
     private String address;
 
     public boolean setBillData(String subscriptonID) {
@@ -16,7 +15,6 @@ public class ElectricityBill extends Bill {
         setBillID(billID[rand.nextInt(billID.length)]);
         setBillPrice(randomValues[rand.nextInt(randomValues.length)]);
         this.companyName = companyNames[rand.nextInt(companyNames.length)];
-        this.consumption = String.valueOf(rand.nextInt(150) + 30); // Random value between 30 and 180
         this.address = addresses[rand.nextInt(addresses.length)];
         return true;
     }
@@ -26,8 +24,7 @@ public class ElectricityBill extends Bill {
                 "Bill ID: %s\n" +
                 "Bill Price: $%.2f\n" +
                 "Company Name: %s\n" +
-                "Consumption: %s units\n" +
-                "Address: %s", getBillID(), getBillPrice(), companyName, consumption, address);
+                "Address: %s", getBillID(), getBillPrice(), companyName, address);
 
         System.out.println(electricityBillMessage);
     }

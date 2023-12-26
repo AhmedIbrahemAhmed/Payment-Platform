@@ -1,10 +1,12 @@
 package Registration;
 
 import java.security.SecureRandom;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import Account.InstaPayAccount;
 import ApplicationDB.InstaPayAccountDB;
+import Provider.*;
 
 public class Signup {
   private boolean isUniqueUsername(String username) {
@@ -22,6 +24,16 @@ public class Signup {
   private boolean saveNewUser(InstaPayAccount user) {
     InstaPayAccountDB accountDB = new InstaPayAccountDB();
     return accountDB.saveInstaPayAccount(user);
+  }
+  private boolean verify(String phoneNumber, String type){
+    Provider provider;
+      if(Objects.equals(type, "Bank")){
+         provider = new Bank();
+      }
+      else{
+        provider = new Wallet();
+      }
+      return provider.verify(phoneNumber);
   }
 
   public int otp(String phoneNumber) {
@@ -43,6 +55,9 @@ public class Signup {
     }
     if (!ValidOtp(otp, userOtp)) {
       throw new Exception("invaild otp");
+    }
+    if(!verify(phoneNumber,accountType)){
+      throw new Exception("this number doesn't belong to any bank or wallet");
     }
     InstaPayAccount account = new InstaPayAccount(username, password, 
     fullName, accountType, phoneNumber);
